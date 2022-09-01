@@ -1,8 +1,8 @@
 package MultiThreading;
 
-class Display {
+class Displayg {
 	public synchronized void wish(String name) {
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i <= 5; i++) {
 			System.out.print("Good Morning: ");
 
 			try {
@@ -18,10 +18,10 @@ class Display {
 }
 
 class MyThread16 extends Thread {
-	Display d;
+	Displayg d;
 	String name;
 
-	public MyThread16(Display d, String name) {
+	public MyThread16(Displayg d, String name) {
 		this.d = d;
 		this.name = name;
 	}
@@ -40,8 +40,8 @@ class MyThread16 extends Thread {
  */
 public class SynchronizeCaseStudy1 {
 	public static void main(String[] args) {
-		Display d1 = new Display();
-		Display d2 = new Display();
+		Displayg d1 = new Displayg();
+		Displayg d2 = new Displayg();
 		MyThread16 t1 = new MyThread16(d1, "Himal");
 		MyThread16 t2 = new MyThread16(d2, "Rajendra");
 		t1.start();
